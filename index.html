@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portafolio Alfajorek</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090c;
+    color:#f5f5f5;
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    right:-180px;
+    top:-220px;
+    background:#f2c500;
+    filter:blur(180px);
+    opacity:.08;
+    pointer-events:none;
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.13;
+
+    background-image:
+        linear-gradient(#fff 1px,transparent 1px),
+        linear-gradient(90deg,#fff 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    mask-image:linear-gradient(#000,transparent 80%);
+}
+
+/* NAVBAR */
+
+header{
+    height:78px;
+    max-width:1180px;
+    margin:auto;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    border-bottom:1px solid #ffffff12;
+
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+
+    font-family:"Space Grotesk";
+    font-size:21px;
+    font-weight:700;
+}
+
+.logo b{
+    display:inline-grid;
+    place-items:center;
+
+    width:34px;
+    height:34px;
+
+    background:#f2c500;
+    color:#08090c;
+
+    border-radius:9px;
+
+    margin-right:8px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#999ea8;
+    text-decoration:none;
+    font-size:13px;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+.contact-button{
+    border:1px solid #ffffff18;
+    border-radius:8px;
+
+    padding:10px 16px;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:13px;
+
+    transition:.2s;
+}
+
+.contact-button:hover{
+    border-color:#f2c500;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1180px;
+    min-height:680px;
+
+    margin:auto;
+    padding:100px 25px;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    border:1px solid #ffffff12;
+    background:#ffffff06;
+
+    border-radius:30px;
+
+    padding:7px 12px;
+
+    font-size:10px;
+    letter-spacing:1px;
+
+    color:#aeb2bb;
+}
+
+.status i{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#65db8b;
+
+    box-shadow:0 0 10px #65db8b;
+}
+
+.yellow{
+    color:#f2c500;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:2.5px;
+
+    margin:24px 0 10px;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+
+    font-size:clamp(48px,6vw,78px);
+
+    line-height:.98;
+
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:#f2c500;
+}
+
+.intro{
+    color:#9499a3;
+
+    max-width:610px;
+
+    margin:25px 0;
+
+    font-size:16px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+
+    margin:30px 0;
+}
+
+.buttons a{
+    padding:13px 20px;
+
+    border-radius:9px;
+
+    font-size:13px;
+    font-weight:700;
+
+    text-decoration:none;
+}
+
+.primary{
+    background:#f2c500;
+    color:#08090c;
+}
+
+.secondary{
+    border:1px solid #ffffff18;
+    color:white;
+}
+
+.stats{
+    display:flex;
+    gap:42px;
+
+    margin-top:50px;
+}
+
+.stats b{
+    display:block;
+
+    font-family:"Space Grotesk";
+    font-size:24px;
+}
+
+.stats small{
+    font-size:10px;
+
+    color:#747983;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* TERMINAL */
+
+.terminal{
+    background:#0d0f14;
+
+    border:1px solid #ffffff14;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 100px #0008;
+
+    transform:rotate(1deg);
+}
+
+.terminal-top{
+    height:48px;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    padding:0 17px;
+
+    border-bottom:1px solid #ffffff0d;
+}
+
+.terminal-top i{
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#34373d;
+}
+
+.terminal-top span{
+    margin-left:10px;
+
+    font:11px monospace;
+
+    color:#777;
+}
+
+.terminal pre{
+    padding:25px 20px;
+
+    min-height:285px;
+
+    font:13px/2.15 monospace;
+}
+
+.terminal pre em{
+    color:#454a53;
+
+    font-style:normal;
+
+    margin-right:20px;
+}
+
+.terminal pre strong{
+    color:#c59aff;
+}
+
+.terminal pre mark{
+    background:none;
+
+    color:#65db8b;
+}
+
+.comment{
+    color:#575d68;
+}
+
+.terminal-bottom{
+    padding:13px 18px;
+
+    border-top:1px solid #ffffff0d;
+
+    color:#65db8b;
+
+    font:10px monospace;
+}
+
+.terminal-bottom span{
+    float:right;
+
+    color:#555;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1180px;
+
+    margin:auto;
+
+    padding:105px 25px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#f2c500;
+
+    font:11px monospace;
+}
+
+.section-title h2{
+    font:700 32px "Space Grotesk";
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:70px;
+}
+
+.about h3{
+    font:700 34px/1.15 "Space Grotesk";
+
+    margin-bottom:20px;
+}
+
+.about h3 span{
+    color:#f2c500;
+}
+
+.about p{
+    color:#9297a1;
+
+    max-width:690px;
+
+    margin:12px 0;
+}
+
+.quote{
+    background:#0d0f13;
+
+    border:1px solid #ffffff12;
+
+    border-radius:13px;
+
+    padding:35px;
+}
+
+.quote b{
+    font:50px Georgia;
+
+    color:#f2c500;
+}
+
+.quote p{
+    color:#eee;
+
+    font:22px "Space Grotesk";
+}
+
+.quote small{
+    color:#777;
+}
+
+/* SKILLS */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:14px;
+}
+
+.cards article{
+    background:#0d0f13;
+
+    border:1px solid #ffffff10;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    transition:.25s;
+}
+
+.cards article:hover{
+    transform:translateY(-5px);
+
+    border-color:#f2c50055;
+}
+
+.ico{
+    display:block;
+
+    color:#f2c500;
+
+    font-size:22px;
+
+    margin-bottom:25px;
+}
+
+.cards h3{
+    font:18px "Space Grotesk";
+
+    margin-bottom:10px;
+}
+
+.cards p{
+    font-size:12px;
+
+    color:#858a94;
+
+    min-height:70px;
+}
+
+.cards small{
+    color:#8d929c;
+
+    font-size:9px;
+}
+
+/* PROJECT */
+
+.project{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    background:#0d0f13;
+
+    border:1px solid #ffffff12;
+
+    border-radius:14px;
+
+    overflow:hidden;
+}
+
+.project-preview{
+    min-height:410px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(circle,#f2c50018,transparent 45%),
+        #090a0d;
+
+    border-right:1px solid #ffffff0d;
+}
+
+.project-preview strong{
+    font:800 68px "Space Grotesk";
+
+    color:#f2c500;
+
+    letter-spacing:-5px;
+}
+
+.project-preview b{
+    font:700 24px "Space Grotesk";
+}
+
+.project-preview small{
+    color:#737984;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+}
+
+.online{
+    margin-top:35px;
+
+    font-size:9px;
+
+    color:#65db8b;
+}
+
+.project-info{
+    padding:45px;
+}
+
+.project-info>small{
+    color:#f2c500;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    font-weight:800;
+}
+
+.project-info h3{
+    font:36px "Space Grotesk";
+
+    margin:8px 0;
+}
+
+.project-info p{
+    color:#90959f;
+
+    font-size:13px;
+}
+
+.project-info ul{
+    list-style:none;
+
+    margin:22px 0;
+
+    color:#b8bdc6;
+
+    font-size:12px;
+}
+
+.project-info li{
+    margin:8px 0;
+}
+
+.project-info li::before{
+    content:"✓";
+
+    color:#f2c500;
+
+    margin-right:10px;
+}
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+}
+
+.tags span{
+    font-size:9px;
+
+    color:#8d929c;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff0b;
+
+    border-radius:5px;
+
+    padding:4px 7px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    border-left:1px solid #ffffff15;
+
+    margin-left:12px;
+
+    max-width:780px;
+}
+
+.timeline article{
+    position:relative;
+
+    padding:0 0 55px 38px;
+}
+
+.timeline article:last-child{
+    padding-bottom:0;
+}
+
+.timeline article::before{
+    content:"";
+
+    position:absolute;
+
+    left:-5px;
+    top:4px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#f2c500;
+
+    box-shadow:0 0 0 5px #f2c50012;
+}
+
+.timeline small{
+    color:#f2c500;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    font-weight:800;
+}
+
+.timeline h3{
+    font:24px "Space Grotesk";
+
+    margin:5px 0;
+}
+
+.timeline p{
+    color:#858b95;
+
+    font-size:13px;
+}
+
+/* TECHNOLOGIES */
+
+.tech{
+    border:1px solid #ffffff10;
+
+    background:#0d0f13;
+
+    border-radius:10px;
+
+    padding:22px;
+
+    color:#c4c8cf;
+
+    font:13px/2.6 "Space Grotesk";
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:1130px;
+
+    padding:75px 60px;
+
+    background:#0d0f13;
+
+    border:1px solid #ffffff12;
+
+    border-radius:16px;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:60px;
+
+    margin-bottom:100px;
+}
+
+.contact h2{
+    font:700 clamp(45px,5vw,65px)/.98 "Space Grotesk";
+
+    letter-spacing:-2px;
+}
+
+.contact h2 span{
+    color:#f2c500;
+}
+
+.contact-description{
+    color:#888e98;
+
+    font-size:13px;
+
+    margin-top:20px;
+}
+
+.contact-box{
+    border:1px solid #ffffff10;
+
+    background:#08090c;
+
+    border-radius:11px;
+
+    padding:24px;
+}
+
+.contact-box p{
+    padding:13px 0;
+
+    border-bottom:1px solid #ffffff0b;
+}
+
+.contact-box small{
+    display:block;
+
+    color:#6d727b;
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
+}
+
+.contact-box b{
+    font-size:13px;
+}
+
+.contact-box a{
+    display:block;
+
+    background:#f2c500;
+
+    color:#08090c;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:7px;
+
+    margin-top:18px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+    max-width:1180px;
+
+    margin:auto;
+
+    border-top:1px solid #ffffff0b;
+
+    padding:25px;
+
+    color:#565b64;
+
+    font-size:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero,
+    .about,
+    .project,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:70px;
+    }
+
+    .terminal{
+        transform:none;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .project-preview{
+        border-right:0;
+
+        border-bottom:1px solid #ffffff0d;
+    }
+
+    .contact{
+        margin:20px;
+
+        padding:45px 25px;
+    }
+}
+
+@media(max-width:520px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .stats{
+        gap:18px;
+    }
+
+    section{
+        padding:75px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<header>
+
+<a class="logo" href="#inicio">
+<b>R</b> Ryvex
+</a>
+
+<nav>
+<a href="#sobre-mi">Sobre mí</a>
+<a href="#habilidades">Habilidades</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#experiencia">Experiencia</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<a class="contact-button" href="#contacto">
+Contactarme
+</a>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div>
+
+<div class="status">
+<i></i>
+DISPONIBLE PARA PROYECTOS
+</div>
+
+<p class="yellow">
+MINECRAFT DEVELOPER
+</p>
+
+<h1>
+Construyo servidores<br>
+<span>que destacan.</span>
+</h1>
+
+<p class="intro">
+Desarrollo y configuro experiencias de Minecraft enfocadas
+en rendimiento, organización y una experiencia profesional
+para cada jugador.
+</p>
+
+<div class="buttons">
+
+<a class="primary" href="#proyectos">
+Ver proyectos ↗
+</a>
+
+<a class="secondary" href="#contacto">
+Contactarme
+</a>
+
+</div>
+
+<div class="stats">
+
+<div>
+<b>01+</b>
+<small>Proyecto principal</small>
+</div>
+
+<div>
+<b>10+</b>
+<small>Tecnologías</small>
+</div>
+
+<div>
+<b>24/7</b>
+<small>Dedicación</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="terminal">
+
+<div class="terminal-top">
+
+<i></i>
+<i></i>
+<i></i>
+
+<span>developer.yml</span>
+
+</div>
+
+<pre>
+<em>01</em> <strong>developer</strong>: Ryvex
+<em>02</em> <strong>specialty</strong>: Minecraft
+<em>03</em> <strong>platform</strong>: Purpur / Paper 1.21.x
+<em>04</em> <strong>focus</strong>: Systems & Config
+<em>05</em> <strong>status</strong>: <mark>online</mark>
+<em>06</em>
+<em>07</em> <i class="comment"># Ready to build.</i>
+</pre>
+
+<div class="terminal-bottom">
+● SYSTEM READY
+<span>~/minecraft</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="sobre-mi">
+
+<div class="section-title">
+<small>01</small>
+<h2>Sobre mí</h2>
+</div>
+
+<div class="about">
+
+<div>
+
+<h3>
+Developer con enfoque en
+<span>experiencias únicas.</span>
+</h3>
+
+<p>
+Me especializo en crear, configurar y organizar sistemas
+para servidores de Minecraft. Busco que cada sistema sea
+funcional, limpio y fácil de mantener.
+</p>
+
+<p>
+También cuento con experiencia dentro de equipos de staff,
+lo que me permite entender tanto la parte técnica como
+las necesidades de una Network.
+</p>
+
+</div>
+
+<div class="quote">
+
+<b>“</b>
+
+<p>
+Un buen servidor no solo funciona.
+También se siente profesional.
+</p>
+
+<small>
+— Ryvex
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="habilidades">
+
+<div class="section-title">
+<small>02</small>
+<h2>Habilidades</h2>
+</div>
+
+<div class="cards">
+
+<article>
+
+<b class="ico">⌘</b>
+
+<h3>
+Configuración
+</h3>
+
+<p>
+Plugins, YAML, permisos, mensajes y sistemas.
+</p>
+
+<small>
+YAML · Plugins · Permissions
+</small>
+
+</article>
+
+
+<article>
+
+<b class="ico">⚡</b>
+
+<h3>
+Sistemas
+</h3>
+
+<p>
+Automatizaciones, comandos, eventos y mecánicas.
+</p>
+
+<small>
+Skript · Events · Commands
+</small>
+
+</article>
+
+
+<article>
+
+<b class="ico">▣</b>
+
+<h3>
+Networks
+</h3>
+
+<p>
+Hubs, modalidades, rangos, TAB, NPCs y hologramas.
+</p>
+
+<small>
+Purpur · Spigot · Multiverse
+</small>
+
+</article>
+
+
+<article>
+
+<b class="ico">⌁</b>
+
+<h3>
+Optimización
+</h3>
+
+<p>
+Revisión de configuraciones para estabilidad y rendimiento.
+</p>
+
+<small>
+Performance · Debug · Server
+</small>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- PROJECT -->
+
+<section id="proyectos">
+
+<div class="section-title">
+<small>03</small>
+<h2>Proyecto destacado</h2>
+</div>
+
+<article class="project">
+
+<div class="project-preview">
+
+<strong>
+GG
+</strong>
+
+<b>
+GG GAMES
+</b>
+
+<small>
+DEDICATED TO EVENTS & MINIGAMES
+</small>
+
+<label class="online">
+● SERVER ONLINE
+</label>
+
+</div>
+
+
+<div class="project-info">
+
+<small>
+PROYECTO PRINCIPAL
+</small>
+
+<h3>
+GG Games
+</h3>
+
+<p>
+Configuración y desarrollo de sistemas para una Network
+enfocada en eventos y minijuegos.
+</p>
+
+<ul>
+
+<li>
+Configuración de rangos y permisos
+</li>
+
+<li>
+Sistemas de eventos y anuncios
+</li>
+
+<li>
+TAB y presentación visual
+</li>
+
+<li>
+Integración de plugins y automatizaciones
+</li>
+
+</ul>
+
+<div class="tags">
+
+<span>Purpur</span>
+<span>ConditionalEvents</span>
+<span>LuckPerms</span>
+<span>TAB</span>
+<span>EssentialsX</span>
+
+</div>
+
+</div>
+
+</article>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experiencia">
+
+<div class="section-title">
+<small>04</small>
+<h2>Experiencia</h2>
+</div>
+
+<div class="timeline">
+
+<article>
+
+<small>
+STAFF
+</small>
+
+<h3>
+Tilted Network
+</h3>
+
+<p>
+Experiencia como Staff, alcanzando el rango Staff y
+participando en la moderación y gestión de la comunidad.
+</p>
+
+</article>
+
+
+<article>
+
+<small>
+DEVELOPMENT
+</small>
+
+<h3>
+GG Games
+</h3>
+
+<p>
+Desarrollo y configuración de sistemas para eventos,
+modalidades, permisos y experiencia general del servidor.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- TECHNOLOGIES -->
+
+<section>
+
+<div class="section-title">
+<small>05</small>
+<h2>Tecnologías</h2>
+</div>
+
+<div class="tech">
+
+Java · Purpur · Spigot · Skript · YAML · LuckPerms ·
+ConditionalEvents · TAB · EssentialsX · PlaceholderAPI ·
+Multiverse · DiscordSRV
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contacto">
+
+<div>
+
+<p class="yellow">
+¿TIENES UN PROYECTO?
+</p>
+
+<h2>
+Hagamos algo<br>
+<span>increíble.</span>
+</h2>
+
+<p class="contact-description">
+Si buscas un Developer para tu Network, servidor o proyecto
+de Minecraft, puedes contactarme.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<p>
+
+<small>
+DISCORD
+</small>
+
+<b>
+soy_lucas#8119
+</b>
+
+</p>
+
+
+<p>
+
+<small>
+MINECRAFT
+</small>
+
+<b>
+Alfajorek
+</b>
+
+</p>
+
+
+<p>
+
+<small>
+GITHUB
+</small>
+
+<b>
+github.com/Alfajorek
+</b>
+
+</p>
+
+
+<a href="DISCORD">
+Enviar mensaje →
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<span>
+© 2026 Alfajorek
+</span>
+
+<span>
+Minecraft Developer Portfolio
+</span>
+
+</footer>
+
+<script>
+
+/* Animación al aparecer */
+
+const observer = new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+
+}
+
+});
+
+},
+
+{
+threshold:.08
+}
+
+);
+
+
+document.querySelectorAll("section").forEach(section => {
+
+section.style.opacity = "0";
+
+section.style.transform = "translateY(20px)";
+
+section.style.transition =
+"opacity .7s ease, transform .7s ease";
+
+observer.observe(section);
+
+});
+
+</script>
+
+</body>
+</html>
